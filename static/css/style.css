@@ -1,33 +1,27 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     background: #0f172a;
     color: #f1f5f9;
     padding: 20px;
 }
-
 .container {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 header {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #334155;
 }
-
 h1 {
     color: #60a5fa;
     margin-bottom: 10px;
 }
-
 .subtitle {
     color: #94a3b8;
 }
-
 .connection-status {
     position: fixed;
     top: 20px;
@@ -37,7 +31,6 @@ h1 {
     font-size: 14px;
     font-weight: 600;
 }
-
 .connected { background: #10b981; }
 .disconnected { background: #ef4444; }
 
@@ -46,7 +39,6 @@ h1 {
     grid-template-columns: 300px 1fr;
     gap: 20px;
 }
-
 @media (max-width: 1024px) {
     .main-layout { grid-template-columns: 1fr; }
 }
@@ -57,19 +49,21 @@ h1 {
     border-radius: 12px;
     padding: 20px;
 }
-
 .form-group {
     margin-bottom: 15px;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: 600;
     color: #cbd5e1;
 }
+<<<<<<< HEAD
 
 input, button ,select{
+=======
+input, button {
+>>>>>>> fe87f11335a188d1220bb13c18f108fa9036359c
     width: 100%;
     padding: 10px;
     border-radius: 6px;
@@ -78,12 +72,10 @@ input, button ,select{
     color: white;
     font-size: 14px;
 }
-
 input:focus {
     outline: none;
     border-color: #60a5fa;
 }
-
 button {
     background: #3b82f6;
     border: none;
@@ -91,17 +83,14 @@ button {
     cursor: pointer;
     transition: background 0.2s;
 }
-
 button:hover { background: #2563eb; }
 button.stop { background: #ef4444; }
 button.stop:hover { background: #dc2626; }
-
 .camera-list {
     margin-top: 20px;
     max-height: 400px;
     overflow-y: auto;
 }
-
 .camera-item {
     background: #0f172a;
     border-radius: 8px;
@@ -109,33 +98,27 @@ button.stop:hover { background: #dc2626; }
     margin-bottom: 10px;
     border: 1px solid #334155;
 }
-
 .camera-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
 }
-
 .camera-name {
     font-weight: 600;
 }
-
 .camera-status {
     font-size: 12px;
     padding: 2px 8px;
     border-radius: 12px;
 }
-
 .status-active { background: #10b981; }
 .status-inactive { background: #6b7280; }
-
 .camera-actions {
     display: flex;
     gap: 8px;
     margin-top: 10px;
 }
-
 .camera-actions button {
     flex: 1;
     padding: 6px;
@@ -149,32 +132,27 @@ button.stop:hover { background: #dc2626; }
     padding: 20px;
     min-height: 400px;
 }
-
 .grid-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .grid-controls {
     display: flex;
     gap: 10px;
 }
-
 .videos-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
 }
-
 .video-card {
     background: #0f172a;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #334155;
 }
-
 .video-header {
     padding: 12px;
     background: #1e293b;
@@ -182,33 +160,28 @@ button.stop:hover { background: #dc2626; }
     justify-content: space-between;
     align-items: center;
 }
-
 .video-stats {
     display: flex;
     gap: 12px;
     font-size: 12px;
     color: #94a3b8;
 }
-
 .video-feed {
     width: 100%;
     height: 240px;
     background: #000;
     display: block;
 }
-
 .no-streams {
     text-align: center;
     padding: 60px 20px;
     color: #64748b;
 }
-
 .no-streams i {
     font-size: 48px;
     margin-bottom: 16px;
     display: block;
 }
-
 .toast {
     position: fixed;
     bottom: 20px;
@@ -220,7 +193,6 @@ button.stop:hover { background: #dc2626; }
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     animation: slideIn 0.3s ease;
 }
-
 @keyframes slideIn {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }

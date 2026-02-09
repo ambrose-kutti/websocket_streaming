@@ -4,11 +4,13 @@ const state = {
     cameras: {},
     activeStreams: {}
 };
+
 // Initialize
 function init() {
     connectWebSocket();
     loadCameras();
 }
+
 // WebSocket connection
 function connectWebSocket() {
     state.socket = io('/stream', {
@@ -27,6 +29,7 @@ function connectWebSocket() {
     state.socket.on('frame', handleVideoFrame);
     state.socket.on('camera_removed', handleCameraRemoved);
 }
+
 // Update connection status UI
 function updateConnectionStatus(connected) {
     const status = document.getElementById('connectionStatus');
@@ -38,6 +41,7 @@ function updateConnectionStatus(connected) {
         status.className = 'connection-status disconnected';
     }
 }
+
 // Load cameras from server
 async function loadCameras() {
     try {
