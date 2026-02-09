@@ -7,10 +7,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 class Camera:
-    def __init__(self, camera_id, rtsp_url, name="Camera"):
+    def __init__(self, camera_id, rtsp_url, name="Camera", location=None, direction=None):
         self.camera_id = camera_id
         self.rtsp_url = rtsp_url
         self.name = name
+        self.location = location
+        self.direction = direction
         self.active = False
         self.thread = None
         self.cap = None
@@ -98,7 +100,7 @@ class CameraManager:
         self.cameras = {}
         self.next_id = 1
         
-    def add_camera(self, rtsp_url, name=None):
+    def add_camera(self, rtsp_url, name=None, location=None, direction=None):
         """Add a new camera"""
         camera_id = f"cam_{self.next_id}"
         self.next_id += 1
@@ -106,7 +108,7 @@ class CameraManager:
         if not name:
             name = f"Camera {camera_id}"
         
-        camera = Camera(camera_id, rtsp_url, name)
+        camera = Camera(camera_id, rtsp_url, name, location, direction)
         self.cameras[camera_id] = camera
         return camera_id
     
@@ -138,6 +140,8 @@ class CameraManager:
             return {
                 'id': camera_id,
                 'name': cam.name,
+                'location': cam.location,
+                'direction': cam.direction,
                 'active': cam.active,
                 'fps': cam.fps,
                 'url': cam.rtsp_url
@@ -151,6 +155,8 @@ class CameraManager:
             cameras.append({
                 'id': cam_id,
                 'name': cam.name,
+                'location': cam.location,
+                'direction': cam.direction,
                 'active': cam.active,
                 'fps': cam.fps,
                 'url': cam.rtsp_url

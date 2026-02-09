@@ -58,6 +58,8 @@ async function loadCameras() {
 // Add new camera
 async function addCamera() {
     const name = document.getElementById('cameraName').value || `Camera ${Object.keys(state.cameras).length + 1}`;
+    const location = document.getElementById('location').value;
+    const direction = document.getElementById('direction').value;
     const url = document.getElementById('rtspUrl').value;
     if (!url) {
         showToast('Please enter RTSP URL', 'error');
@@ -67,12 +69,14 @@ async function addCamera() {
         const response = await fetch('/api/cameras', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ name, rtsp_url: url })
+            body: JSON.stringify({ name, location, direction, rtsp_url: url })
         });
         const result = await response.json();
         if (result.success) {
             showToast('Camera added successfully', 'success');
             document.getElementById('cameraName').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('direction').value = 'N';
             document.getElementById('rtspUrl').value = '';
             loadCameras();
         } else {
@@ -173,6 +177,10 @@ function updateCameraList() {
                 <div class="camera-status status-${cam.active ? 'active' : 'inactive'}">
                     ${cam.active ? 'LIVE' : 'OFFLINE'}
                 </div>
+            </div>
+            <div style="font-size: 12px; color: #94a3b8; margin-bottom: 4px;">
+                <div><strong>Location:</strong> ${cam.location || 'N/A'}</div>
+                <div><strong>Direction:</strong> ${cam.direction || 'N/A'}</div>
             </div>
             <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px; word-break: break-all;">
                 ${cam.url.substring(0, 40)}${cam.url.length > 40 ? '...' : ''}

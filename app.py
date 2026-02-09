@@ -15,14 +15,13 @@ app.config['SECRET_KEY'] = 'your-secret-key-here'
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
 cam_manager = CameraManager()   # Initialize camera manager
-
 #-----------
 # Routes    
 #-----------
 @app.route('/')
 def index():
     """Main page"""
-    return render_template('index.html')
+    return render_template('cameras.html')
 
 @app.route('/api/cameras', methods=['GET'])
 def get_cameras():
@@ -38,7 +37,9 @@ def add_camera():
         return jsonify({'error':'RTSP URL required'}), 400
     rtsp_url = data['rtsp_url']
     name = data.get('name', f'Camera {len(cam_manager.cameras) + 1}')
-    camera_id = cam_manager.add_camera(rtsp_url, name)
+    location = data.get('location')
+    direction = data.get('direction')
+    camera_id = cam_manager.add_camera(rtsp_url, name, location, direction)
     return jsonify({
         'success': True,
         'camera_id': camera_id,
@@ -70,7 +71,6 @@ def delete_camera(camera_id):
         socketio.emit('camera_removed', {'camera_id': camera_id}, namespace='/stream')
         return jsonify({'success': True, 'message': 'Camera removed'})
     return jsonify({'error': 'Camera not found'}), 404
-
 #-------------------
 # WebSocket handlers
 #-------------------

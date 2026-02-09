@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTSP Camera Streamer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RTSP Camera Streaming</h1>
+            <p class="subtitle">Stream multiple RTSP cameras in real-time</p>
+        </header>
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3 style="margin-bottom: 15px; color: #60a5fa;">Add Camera</h3>
+                <div class="form-group">
+                    <label>Class Name</label>
+                    <input type="text" id="cameraName" placeholder="Front Door Camera">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="location" placeholder="IT Block">
+                </div>
+                <div class="form-group">
+                    <label>Direction</label>
+                    <select id="direction">
+                        <option value="N">Options</option>
+                        <option value="IN">IN</option>
+                        <option value="OUT">OUT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>RTSP URL</label>
+                    <input type="text" id="rtspUrl" placeholder="rtsp://username:password@ip:port/stream">
+                </div>
+                <button onclick="addCamera()">Add Camera</button>
+                <div class="camera-list" id="cameraList">
+                    <!-- Cameras will be added here -->
+                </div>
+            </div>
+            <!-- Video Grid -->
+            <div class="video-grid">
+                <div class="grid-header">
+                    <h3 style="color: #60a5fa;">Live Streams</h3>
+                    <div class="grid-controls">
+                        <button onclick="startAll()">Start All</button>
+                        <button class="stop" onclick="stopAll()">Stop All</button>
+                    </div>
+                </div>
+                <div class="videos-container" id="videosContainer">
+                    <div class="no-streams">
+                        <div>📷</div>
+                        <h3>No Active Streams</h3>
+                        <p>Add a camera and start streaming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div id="connectionStatus" class="connection-status disconnected">
+        Disconnected
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
