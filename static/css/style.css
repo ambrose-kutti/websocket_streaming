@@ -58,12 +58,7 @@ label {
     font-weight: 600;
     color: #cbd5e1;
 }
-<<<<<<< HEAD
-
-input, button ,select{
-=======
 input, button {
->>>>>>> fe87f11335a188d1220bb13c18f108fa9036359c
     width: 100%;
     padding: 10px;
     border-radius: 6px;
