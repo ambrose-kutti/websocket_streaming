@@ -20,26 +20,17 @@ The Camera Management System is a comprehensive application designed to manage a
   - JavaScript (main.js)
   - HTML (cameras.html)
 - **Dependencies**:
-  - bidict
-  - Flask
   - Flask-SocketIO
   - opencv-python
   - numpy
   - python-socketio
   - python-engineio
-  - click
-  - colorama
-  - dnspython
-  - eventlet
-  - greenlet
-  - h11
   - itsdangerous
   - Jinja2
-  - MarkupSafe
   - simple-websocket
   - Werkzeug
   - wsproto
-- **Database**: Not specified
+- **Database**: Not used
 
 ## 📦 Installation
 To install the required dependencies, run the following command:
@@ -68,15 +59,15 @@ Note: The actual project structure may vary depending on the specific implementa
 
 ## 📸 Screenshots
 
+<img width="1335" height="634" alt="image" src="https://github.com/user-attachments/assets/3a259160-d6c2-4dc1-ad11-bf7b367a93da" />
+
+
 ## 🤝 Contributing
 Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request with your changes.
 
-## 📝 License
-The Camera Management System is licensed under [insert license here].
 
 ## 📬 Contact
-For any questions or concerns, please contact [insert contact information here].
+For any questions or concerns, please contact [arunambrose2004@gmail.com].
 
 ## 💖 Thanks Message
 This project was made possible by the contributions of many individuals. Thank you to everyone who has contributed to the development and maintenance of this project.
-This is written by [readme.ai](https://readme-generator-phi.vercel.app/)
