@@ -58,7 +58,7 @@ label {
     font-weight: 600;
     color: #cbd5e1;
 }
-input, button {
+input, button, select {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
