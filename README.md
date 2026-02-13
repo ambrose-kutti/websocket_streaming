@@ -40,7 +40,7 @@ pip install -r requirements.txt
 This will install all the necessary packages and libraries specified in the `requirements.txt` file.
 
 ## 💻 Usage
-1. **Prerequisites**: Ensure you have Python and pip installed on your system.
+1. **Prerequisites**: Ensure you have Python 3.9+ and pip installed on your system.
 2. **Installation**: Run `pip install -r requirements.txt` to install the required dependencies.
 3. **Running locally**: Run `python app.py` to start the Flask development server.
 4. **Accessing the application**: Open a web browser and navigate to `http://localhost:5000` to access the application.
