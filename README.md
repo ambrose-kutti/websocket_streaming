@@ -19,6 +19,7 @@ The Camera Management System is a comprehensive application designed to manage a
 - **Frontend**:
   - JavaScript (main.js)
   - HTML (cameras.html)
+  - CSS (style.css)
 - **Dependencies**:
   - Flask-SocketIO
   - opencv-python
