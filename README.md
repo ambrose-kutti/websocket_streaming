@@ -69,5 +69,4 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 ## 📬 Contact
 For any questions or concerns, please contact [arunambrose2004@gmail.com].
 
-## 💖 Thanks Message
-This project was made possible by the contributions of many individuals. Thank you to everyone who has contributed to the development and maintenance of this project.
+
