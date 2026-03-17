@@ -31,7 +31,8 @@ The Camera Management System is a comprehensive application designed to manage a
   - simple-websocket
   - Werkzeug
   - wsproto
-- **Database**: Not used
+- **Database**: 
+  - Not used
 
 ## 📦 Installation
 To install the required dependencies, run the following command:
