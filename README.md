@@ -51,10 +51,14 @@ This will install all the necessary packages and libraries specified in the `req
 .
 ├── app.py
 ├── camera_manager.py
-├── main.js
-├── cameras.html
+├── static
+    └── js
+       └── main.js
+    └──css
+       └── style.css
+|──templates
+   └── cameras.html  
 ├── requirements.txt
-└── ...
 ```
 Note: The actual project structure may vary depending on the specific implementation and additional files.
 
