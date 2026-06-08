@@ -26,11 +26,8 @@ The Camera Management System is a comprehensive application designed to manage a
   - numpy
   - python-socketio
   - python-engineio
-  - itsdangerous
   - Jinja2
   - simple-websocket
-  - Werkzeug
-  - wsproto
 - **Database**: 
   - Not used
 
