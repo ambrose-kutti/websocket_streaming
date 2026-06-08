@@ -28,8 +28,6 @@ The Camera Management System is a comprehensive application designed to manage a
   - python-engineio
   - Jinja2
   - simple-websocket
-- **Database**: 
-  - Not used
 
 ## 📦 Installation
 To install the required dependencies, run the following command:
